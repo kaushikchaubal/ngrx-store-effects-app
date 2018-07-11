@@ -39,5 +39,7 @@ export class ProductsComponent implements OnInit {
     this.store
       .select(fromStore.getAllPizzas)
       .subscribe(pizzas => (this.currentPizzas = pizzas));
+
+    this.store.dispatch(new fromStore.LoadPizzas());
   }
 }
